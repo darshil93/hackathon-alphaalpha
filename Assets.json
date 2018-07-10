@@ -1,0 +1,47 @@
+{
+  "11111":{
+    "PlaceName" : "Las Vegas",
+    "Img_URL": "https://asdad/cp/mcao.png",
+    "Type" : "City",
+    "Things_to_do" : ["Party", "Casino"],
+    "Weather" : "Moderate",
+    "Best_time_to_visit" : "Feb-March",
+    "Tags" : ["Gambling", "Night_life"]
+  },
+  "22222":{
+    "PlaceName" : "Kilimanjaro",
+    "Img_URL": "https://asdad/cp/mcao.png",
+    "Type" : "Mountain",
+    "Things_to_do" : ["Hiking", "Sight-Seeing", "Camping"],
+    "Weather" : "Moderate-high",
+    "Best_time_to_visit" : "Aug-Sept",
+    "Tags" : ["Nature"]
+  },
+  "33333":{
+    "PlaceName" : "Chicago",
+    "Img_URL": "https://asdad/cp/mcao.png",
+    "Type" : "City",
+    "Things_to_do" : ["Architecture_tour","Deep_Dish_Pizza"],
+    "Weather" : "Moderate",
+    "Best_time_to_visit" : "June-Agust",
+    "Tags": ["Bean","Buckingham_Fountain"]
+  },
+  "44444":{
+    "PlaceName" : "Newport",
+    "Img_URL": "https://asdad/cp/mcao.png",
+    "Type" : "Beach",
+    "Things_to_do" : ["Surfing", "Sailing", "Beach_Volleyball"],
+    "Weather" : "Cool",
+    "Best_time_to_visit" : "All_Year_Round",
+    "Tags": ["Turtles"]
+  },
+  "55555":{
+    "PlaceName" : "YellowStone",
+    "Img_URL": "https://asdad/cp/mcao.png",
+    "Type" : "National_Park",
+    "Things_to_do" : ["Hiking", "Camping", "Photography"],
+    "Weather" : "Hot",
+    "Best_time_to_visit" : "Aug-Nov",
+    "Tags" : ["Bison", "Hot_Water_Spring"]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "Userid1" : {
+    "Asset_ids" : ["11111","55555"],
+    "Tags": ["Party", "Beaches", "Surfing"]
+  },
+  "Userid2" : {
+    "Asset_ids" : ["22222","44444"],
+    "Tags": ["Hiking", "Climbing", "Camping"]
+  },
+  "Userid3" : {
+    "Asset_ids" : ["55555","11111"],
+    "Tags": ["Architecture", "Restaturants"]
+  },
+  "Userid4" : {
+    "Asset_ids" : ["33333","22222"],
+    "Tags": ["Kids", "Musems", "Art"]
+  },
+  "Userid5" : {
+    "Asset_ids" : ["44444","33333"],
+    "Tags": ["Sports", "Tennis", "Wimbledon"]
+  }
+  
+}

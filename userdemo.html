@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<body>
+<Title>My Bucket List</Title>
+<h2>My Bucket List</h2>  
+<div id="demo"></div>
+<div id="parent"></div>
+
+<script>
+    function GetQueryStringParams(sParam)
+{
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++) 
+    {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam) 
+        {
+            return sParameterName[1];
+        }
+    }
+}
+    var userid = GetQueryStringParams('userid');
+    
+
+ var user = JSON.parse('{"uid1":{"Asset_ids":["1","2"],"Tags":["Party","Beaches","Surfing"]},"uid2":{"Asset_ids":["2","4"],"Tags":["Hiking","Climbing","Camping"]},"uid3":{"Asset_ids":["5","1"],"Tags":["Architecture","Restaturants"]},"uid4":{"Asset_ids":["3","2"],"Tags":["Kids","Musems","Art"]},"uid5":{"Asset_ids":["4","3"],"Tags":["Sports","Tennis","Wimbledon"]}}');
+ var obj = JSON.parse('{"1":{"PlaceName" : "Las Vegas","Img_URL": "http://lasvegas.discovercountynetwork.com/wp-content/uploads/2015/09/vegas2.jpg","Type" : "City","Things_to_do" : ["Party", "Casino"],"Weather" : "Moderate","Best_time_to_visit" : "Feb-March","Tags" : ["Gambling", "Night_life"]},"2":{"PlaceName" : "Kilimanjaro","Img_URL": "https://farm2.staticflickr.com/1439/553319065_0077cd253c_b.jpg","Type" : "Mountain","Things_to_do" : ["Hiking", "Sight-Seeing", "Camping"],"Weather" : "Moderate-high","Best_time_to_visit" : "Aug-Sept","Tags" : ["Nature"]}, "3":{"PlaceName" : "Chicago","Img_URL": "https://cdn.postgradproblems.com/wp-content/uploads/2017/08/9463ae71eabde476e46ae2d07d7160e9.jpg","Type" : "City","Things_to_do" : ["Architecture_tour","Deep_Dish_Pizza"],"Weather" : "Moderate","Best_time_to_visit" : "June-Agust","Tags": ["Bean","Buckingham_Fountain"]},"4":{"PlaceName" : "Newport","Img_URL": "https://st2.depositphotos.com/2435561/6622/i/950/depositphotos_66224601-stock-photo-the-grand-canal-on-balboa.jpg","Type" : "Beach","Things_to_do" : ["Surfing", "Sailing", "Beach_Volleyball"],"Weather" : "Cool","Best_time_to_visit" : "All_Year_Round","Tags": ["Turtles"]},"5":{"PlaceName" : "YellowStone","Img_URL": "http://midutahradio.com/wp-content/uploads/2018/06/zion-national.jpg","Type" : "National_Park","Things_to_do" : ["Hiking", "Camping", "Photography"],"Weather" : "Hot","Best_time_to_visit" : "Aug-Nov","Tags" : ["Bison", "Hot_Water_Spring"]}}');
+    var i;var p;
+    for (var key in user){
+        if(key==userid){
+            p=key;
+            console.log("success");
+            break;
+        }
+    }
+    console.log(user[p])
+    for(var key in user[p].Asset_ids){
+        console.log(user[p].Asset_ids[key]);
+    }
+    i=0;
+   for(var key in user[p].Asset_ids){
+    $('#parent').append('<div class = "tabs"id="cityName'+i+'" style=  display:block;max-height:20;background-image:url("'+obj[user[p].Asset_ids[key]].Img_URL +'");no-repeat;></div>');
+    document.getElementById("cityName"+i).innerHTML = obj[user[p].Asset_ids[key]].PlaceName;i++;}
+    </script>
+    <style>
+    .tabs {
+        display: block;
+        width:100%;
+        height:85px;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        background-image: center;
+        padding: 10%;
+        margin: 5%;
+        font-family: Helvetica;
+        color: white;
+        font-weight: bolder;
+        font-size: xx-large;
+
+    }
+    .thingstodo {
+        display: inline-block;
+        color:grey;
+        margin-left:50px;
+    }
+    .basket {
+        display: inline-block;
+        color:grey;
+        margin-left:350px;
+    }
+    .button {
+        background-color: grey;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+</style>
+</body>
+</html>
