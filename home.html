@@ -4,8 +4,11 @@
 <body>
 
 <title>Home</title>
+<div>
+    <h1 class="ribbon"><strong class="ribbon-content">Destinations</strong></h1>
+</div>
+<div class="bucket-button"><input type="button" value="View Bucketlist" class="bucketview"></div>
 <div id="parent"></div>
-<p id="demo"></p>
 
 <script>
     printHome();
@@ -44,7 +47,6 @@
         height:85px;
         background-size: contain;
         background-repeat: no-repeat;
-
         background-image: center;
         padding: 10%;
         margin: 5%;
@@ -53,6 +55,11 @@
         font-weight: bolder;
         font-size: xx-large;
 
+    }
+    .bucket-button {
+        position: absolute;
+        right: 0;
+        top: 75px;
     }
     .thingstodo {
         display: inline-block;
@@ -75,6 +82,68 @@
         font-size: 16px;
         margin: 4px 2px;
         cursor: pointer;
+    }
+    .bucketview {
+        display: inline-block;
+        background-color: grey;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        float: right;
+    }
+    .ribbon {
+        font-size: 27px !important;
+
+        /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
+
+        width: 50%;
+
+        position: relative;
+        background: #0070BB;
+        color: #fff;
+        text-align: center;
+        padding: 1em 2em; /* Adjust to suit */
+        margin: 2em auto 3em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+    }
+    .ribbon:before, .ribbon:after {
+        content: "";
+        position: absolute;
+        display: block;
+        bottom: -1em;
+        border: 1.5em solid #0070BB;
+        z-index: -1;
+    }
+    .ribbon:before {
+        left: -2em;
+        border-right-width: 1.5em;
+        border-left-color: transparent;
+    }
+    .ribbon:after {
+        right: -2em;
+        border-left-width: 1.5em;
+        border-right-color: transparent;
+    }
+    .ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
+        content: "";
+        position: absolute;
+        display: block;
+        border-style: solid;
+        border-color: #0070BB transparent transparent transparent;
+        bottom: -1em;
+    }
+    .ribbon .ribbon-content:before {
+        left: 0;
+        border-width: 1em 0 0 1em;
+    }
+    .ribbon .ribbon-content:after {
+        right: 0;
+        border-width: 1em 1em 0 0;
     }
 </style>
 
