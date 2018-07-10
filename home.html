@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<body>
+
+<title>Home</title>
+<div id="parent"></div>
+<p id="demo"></p>
+
+<script>
+    printHome();
+    function printHome() {
+        var obj = JSON.parse('{"1":{"PlaceName" : "Las Vegas","Img_URL": "http://lasvegas.discovercountynetwork.com/wp-content/uploads/2015/09/vegas2.jpg","Type" : "City","Things_to_do" : ["Party", "Casino"],"Weather" : "Moderate","Best_time_to_visit" : "Feb-March","Tags" : ["Gambling", "Night_life"]},"2":{"PlaceName" : "Kilimanjaro","Img_URL": "https://farm2.staticflickr.com/1439/553319065_0077cd253c_b.jpg","Type" : "Mountain","Things_to_do" : ["Hiking", "Sight-Seeing", "Camping"],"Weather" : "Moderate-high","Best_time_to_visit" : "Aug-Sept","Tags" : ["Nature"]}, "3":{"PlaceName" : "Chicago","Img_URL": "https://cdn.postgradproblems.com/wp-content/uploads/2017/08/9463ae71eabde476e46ae2d07d7160e9.jpg","Type" : "City","Things_to_do" : ["Architecture_tour","Deep_Dish_Pizza"],"Weather" : "Moderate","Best_time_to_visit" : "June-Agust","Tags": ["Bean","Buckingham_Fountain"]},"4":{"PlaceName" : "Newport","Img_URL": "https://st2.depositphotos.com/2435561/6622/i/950/depositphotos_66224601-stock-photo-the-grand-canal-on-balboa.jpg","Type" : "Beach","Things_to_do" : ["Surfing", "Sailing", "Beach_Volleyball"],"Weather" : "Cool","Best_time_to_visit" : "All_Year_Round","Tags": ["Turtles"]},"5":{"PlaceName" : "YellowStone","Img_URL": "http://midutahradio.com/wp-content/uploads/2018/06/zion-national.jpg","Type" : "National_Park","Things_to_do" : ["Hiking", "Camping", "Photography"],"Weather" : "Hot","Best_time_to_visit" : "Aug-Nov","Tags" : ["Bison", "Hot_Water_Spring"]}}');
+        for (i = 1; i < 6; i++) {
+            $('#parent').append('<div class = "tabs"id="cityName'+i+'" style=  display:block;max-height:20;background-image:url("'+obj[i].Img_URL+'");no-repeat;></div>');
+            document.getElementById("cityName"+i).innerHTML = obj[i].PlaceName;
+            var ThingsTodo="";
+            $('#cityName'+i).append('<div id="ThingsToDo'+i+'" class="thingstodo"></div>');
+
+            for (j = 0; j < obj[i].Things_to_do.length; j++) {
+                if(j<obj[i].Things_to_do.length-1) {
+                    ThingsTodo = ThingsTodo + "#" + obj[i].Things_to_do[j] + ", ";
+                }
+                else {
+                    ThingsTodo = ThingsTodo + "#" + obj[i].Things_to_do[j] ;
+                }
+            }
+            $('#ThingsToDo'+i).append('<ul id="list" style="margin-left:300px;"><li>Best Time To visit: '+obj[i].Best_time_to_visit+'</li><li>Current Weather: '+obj[i].Weather+'</li><li>Things To Do: '+ThingsTodo+'</li>  </ul>');
+            $('#ThingsToDo'+i).append('<div id="Basket'+i+'" class="basket"><input type="button" class="button" onclick="change(this)" value="Bucket Me"></input></div>');
+        }
+    }
+    function change(elem) {
+
+       // var elem = document.getElementById("Basket"+i);
+        if (elem.value=="Bucket Me") elem.value = "Bucketed";
+        else elem.value = "Bucket Me";
+    }
+</script>
+
+<style>
+    .tabs {
+        display: block;
+        width:100%;
+        height:85px;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        background-image: center;
+        padding: 10%;
+        margin: 5%;
+        font-family: Helvetica;
+        color: white;
+        font-weight: bolder;
+        font-size: xx-large;
+
+    }
+    .thingstodo {
+        display: inline-block;
+        color:grey;
+        margin-left:50px;
+    }
+    .basket {
+        display: inline-block;
+        color:grey;
+        margin-left:350px;
+    }
+    .button {
+        background-color: grey;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+</style>
+
+</body>
+</html>
